@@ -1,22 +1,63 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  https://img.shields.io/github/license/herald-of-spring/rushin-hackers
+  return `img.shields.io/badge/license-${license}-brightgreen`;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  let link = "choosealicense.com/licenses/";
+  switch (license) {
+    case "GNU AGPLv3":
+      link += "agpl-3.0";
+      break;
+    case "GNU GPLv3":
+      link += "gpl-3.0";
+      break;
+    case "GNU LGPLv3":
+      link += "lgpl-3.0";
+      break;
+    case "Mozilla Public License 2.0":
+      link += "mpl-2.0";
+      break;
+    case "Apache License 2.0":
+      link += "apache-2.0";
+      break;
+    case "MIT License":
+      link += "mit";
+      break;
+    case "Boost Software License 1.0":
+      link += "bsl-1.0";
+      break;
+    default:
+      link += "unlicense";
+  }
+  return link;
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  let badge = renderLicenseBadge(data.license);
+  let link = renderLicenseLink(data.license);
   return `# ${data.title}
-
-`;
+  ${badge}
+  ## Description
+  ${data.description}
+  ## Table of Contents
+  [Installation](#installation)
+  [Usage](#usage)
+  [License](#license)
+  [Contributing](#contributing)
+  [Tests](#tests)
+  [Questions](#questions)
+  ## Installation
+  ${data.installation}
+  ## Usage
+  ${data.usage}
+  ## License
+  This application is licensed under [${data.license}](${link}).
+  ## Contributing
+  ${data.contribution}
+  ## Tests
+  ${data.testing}
+  ## Questions
+  For any inquiries, you can find me at ${data.username} on GitHub, or reach me through ${data.email}.`;
 }
 
 module.exports = generateMarkdown;
