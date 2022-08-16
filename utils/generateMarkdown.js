@@ -1,5 +1,6 @@
 function renderLicenseBadge(license) {
-  return `img.shields.io/badge/license-${license}-brightgreen`;
+  let URILicense = encodeURIComponent(license);
+  return `img.shields.io/badge/license-${URILicense}-brightgreen`;
 }
 
 function renderLicenseLink(license) {
@@ -36,28 +37,30 @@ function generateMarkdown(data) {
   let badge = renderLicenseBadge(data.license);
   let link = renderLicenseLink(data.license);
   return `# ${data.title}
-  ${badge}
-  ## Description
-  ${data.description}
-  ## Table of Contents
-  [Installation](#installation)
-  [Usage](#usage)
-  [License](#license)
-  [Contributing](#contributing)
-  [Tests](#tests)
-  [Questions](#questions)
-  ## Installation
-  ${data.installation}
-  ## Usage
-  ${data.usage}
-  ## License
-  This application is licensed under [${data.license}](${link}).
-  ## Contributing
-  ${data.contribution}
-  ## Tests
-  ${data.testing}
-  ## Questions
-  For any inquiries, you can find me at ${data.username} on GitHub, or reach me through ${data.email}.`;
+${badge}
+## Description
+${data.description}
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## License
+This application is licensed under [${data.license}](${link}).
+## Contributing
+${data.contribution}
+## Tests
+${data.testing}
+## Questions
+For any inquiries, you can find me at ${data.username} on GitHub, or reach me through ${data.email}.
+
+This README was generated. You can find the source code [here](https://github.com/herald-of-spring/readme-shortcut)`;
 }
 
 module.exports = generateMarkdown;
