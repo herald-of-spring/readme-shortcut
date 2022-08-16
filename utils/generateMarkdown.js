@@ -1,10 +1,10 @@
 function renderLicenseBadge(license) {
   let URILicense = encodeURIComponent(license);
-  return `img.shields.io/badge/license-${URILicense}-brightgreen`;
+  return `[![License](https://img.shields.io/badge/license-${URILicense}-brightgreen)]`;
 }
 
 function renderLicenseLink(license) {
-  let link = "choosealicense.com/licenses/";
+  let link = "https://www.choosealicense.com/licenses/";
   switch (license) {
     case "GNU AGPLv3":
       link += "agpl-3.0";
@@ -37,7 +37,7 @@ function generateMarkdown(data) {
   let badge = renderLicenseBadge(data.license);
   let link = renderLicenseLink(data.license);
   return `# ${data.title}
-${badge}
+${badge}(${link})
 ## Description
 ${data.description}
 ## Table of Contents
@@ -60,7 +60,7 @@ ${data.testing}
 ## Questions
 For any inquiries, you can find me at ${data.username} on GitHub, or reach me through ${data.email}.
 
-This README was generated. You can find the source code [here](https://github.com/herald-of-spring/readme-shortcut)`;
+This README was generated. You can find the source code [here](https://github.com/herald-of-spring/readme-shortcut).`;
 }
 
 module.exports = generateMarkdown;
