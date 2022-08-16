@@ -58,7 +58,7 @@ ${data.contribution}
 ## Tests
 ${data.testing}
 ## Questions
-For any inquiries, you can find me at ${data.username} on GitHub, or reach me through ${data.email}.
+For any inquiries, you can find me at [${data.username}](https://github.com/${data.username}) on GitHub, or reach me through ${data.email}.
 
 This README was generated. You can find the source code [here](https://github.com/herald-of-spring/readme-shortcut).`;
 }

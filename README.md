@@ -20,6 +20,6 @@ This application is open source. Everyone is free to contribute.
 ## Tests
 There are no tests as of now.
 ## Questions
-For any inquiries, you can find me at herald-of-spring on GitHub, or reach me through andy.ducanh@gmail.com.
+For any inquiries, you can find me at [herald-of-spring](https://github.com/herald-of-spring) on GitHub, or reach me through andy.ducanh@gmail.com.
 
 This README was generated. You can find the source code [here](https://github.com/herald-of-spring/readme-shortcut).
